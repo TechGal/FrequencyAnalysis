@@ -39,10 +39,12 @@ for y in range (0,len(alphabet)):
     d = letters[y]
     if d > 0:
         e = (d / tletter) * 100
-        re = str(round(e, 2)).ljust(5)
-        frequency[y] = re
+        re = str(round(e, 2))
+        if len(re) < 4:
+            re = re + "0"
+        frequency[y] = re.ljust(5)
     else:
-        frequency[y] = "0"
+        frequency[y] = "0.00"
 
 for k in range (0,len(alphabet)):
     l = str(letters[k])
